@@ -1,0 +1,37 @@
+{
+  "name": "virt-bench",
+  "version": "0.0.1",
+  "description": "virt bench for the browser and node.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nathanfaucett/virt-bench.git"
+  },
+  "main": "src/index.js",
+  "keywords": [
+    "virt",
+    "bench",
+    "virt-bench",
+    "virt-bench.js"
+  ],
+  "scripts": {
+    "build": "comn -f ./src/index.js -o ./index.js"
+  },
+  "author": "Nathan Faucett",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-jshint": "^0.11.3",
+    "grunt-jsbeautifier": "^0.2.10"
+  },
+  "dependencies": {
+    "array-map": "git://github.com/nathanfaucett/array-map.git",
+    "comn": "git://github.com/nathanfaucett/comn.git",
+    "environment": "git://github.com/nathanfaucett/environment.git",
+    "event_listener": "git://github.com/nathanfaucett/event_listener.git",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "virt": "git://github.com/nathanfaucett/virt.git",
+    "virt-dom": "git://github.com/nathanfaucett/virt-dom.git"
+  }
+}
