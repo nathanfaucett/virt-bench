@@ -24,9 +24,34 @@ module.exports = function(grunt) {
                 "src/**/*.js",
                 "test/**/*.js"
             ]
+        },
+        envify: {
+            options: {
+                env: {
+                    NODE_ENV: process.env.NODE_ENV
+                }
+            },
+            index: {
+                files: {
+                    "index.env.js": [
+                        "index.js"
+                    ]
+                }
+            }
+        },
+        uglify: {
+            index: {
+                files: {
+                    "index.js": [
+                        "index.env.js"
+                    ]
+                }
+            }
         }
     });
 
+    grunt.loadNpmTasks("grunt-envify");
+    grunt.loadNpmTasks("grunt-contrib-uglify");
     grunt.loadNpmTasks("grunt-jsbeautifier");
     grunt.loadNpmTasks("grunt-contrib-jshint");
     grunt.registerTask("default", ["jsbeautifier", "jshint"]);

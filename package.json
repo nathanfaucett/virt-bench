@@ -14,23 +14,24 @@
     "virt-bench.js"
   ],
   "scripts": {
-    "build": "comn -f ./src/index.js -o ./index.js"
+    "compile": "comn -f ./src/index.js -o ./index.js",
+    "build": "npm run compile && grunt envify && grunt uglify"
   },
   "author": "Nathan Faucett",
   "license": "MIT",
   "readmeFilename": "README.md",
   "devDependencies": {
+    "comn": "git://github.com/nathanfaucett/comn.git",
     "grunt": "^0.4.5",
     "grunt-contrib-jshint": "^0.11.3",
+    "grunt-contrib-uglify": "^0.11.1",
+    "grunt-env": "^0.4.4",
+    "grunt-envify": "0.0.3",
     "grunt-jsbeautifier": "^0.2.10"
   },
   "dependencies": {
+    "event_emitter": "git://github.com/nathanfaucett/event_emitter.git",
     "array-map": "git://github.com/nathanfaucett/array-map.git",
-    "comn": "git://github.com/nathanfaucett/comn.git",
-    "environment": "git://github.com/nathanfaucett/environment.git",
-    "event_listener": "git://github.com/nathanfaucett/event_listener.git",
-    "react": "^0.14.7",
-    "react-dom": "^0.14.7",
     "virt": "git://github.com/nathanfaucett/virt.git",
     "virt-dom": "git://github.com/nathanfaucett/virt-dom.git"
   }
