@@ -48,7 +48,7 @@ var Comp = React.createClass({
     }
 });
 
-suite.add("React-updates", {
+suite.add("React", {
     defer: true,
     fn: (function() {
         var first = true,

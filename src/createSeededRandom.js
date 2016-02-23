@@ -9,7 +9,7 @@ module.exports = createSeededRandom;
 function createSeededRandom() {
     var seed = (MODULO / 2) | 0;
 
-    function random(t) {
+    function random() {
         seed = ((MULTIPLIER * seed + OFFSET) % MODULO);
         return seed / MODULO;
     }

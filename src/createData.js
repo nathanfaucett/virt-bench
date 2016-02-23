@@ -1,6 +1,3 @@
-var createSeededRandom = require("./createSeededRandom");
-
-
 module.exports = createData;
 
 

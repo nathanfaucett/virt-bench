@@ -57,12 +57,12 @@ Comp.prototype.render = function() {
     }
 };
 
-suite.add("virt-updates", {
+suite.add("virt", {
     defer: true,
     fn: (function() {
         var first = true,
             random = createSeededRandom();
-            
+
         return function(deferred) {
             var app = document.getElementById("app");
             if (first) {
