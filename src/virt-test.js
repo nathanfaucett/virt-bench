@@ -1,7 +1,7 @@
-var virt = require("virt"),
-    virtDOM = require("virt-dom"),
-    arrayMap = require("array-map"),
-    EventEmitter = require("event_emitter"),
+var virt = require("@nathanfaucett/virt"),
+    virtDOM = require("@nathanfaucett/virt-dom"),
+    arrayMap = require("@nathanfaucett/array-map"),
+    EventEmitter = require("@nathanfaucett/event_emitter"),
     createData = require("./createData"),
     createSeededRandom = require("./createSeededRandom"),
     suite = require("./suite");

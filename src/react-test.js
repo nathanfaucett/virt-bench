@@ -1,5 +1,5 @@
-var arrayMap = require("array-map"),
-    EventEmitter = require("event_emitter"),
+var arrayMap = require("@nathanfaucett/array-map"),
+    EventEmitter = require("@nathanfaucett/event_emitter"),
     createData = require("./createData"),
     createSeededRandom = require("./createSeededRandom"),
     suite = require("./suite");
