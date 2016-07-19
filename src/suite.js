@@ -3,14 +3,20 @@ var suite = new Benchmark.Suite();
 
 suite
     .on("cycle", function(event) {
-        var updates = document.getElementById("info");
-        updates.innerHTML += event.target + "<br\>";
+        var updates = document.getElementById("info-" + event.target.name);
+        updates.innerHTML = event.target;
         console.log(String(event.target));
     })
     .on("complete", function() {
-        var updates = document.getElementById("done");
-        updates.innerHTML = "Fastest is " + this.filter("fastest").map("name");
-        console.log("Fastest is " + this.filter("fastest").map("name"));
+        var updates = document.getElementById("done"),
+            fastest = this.filter("fastest"),
+            slowest = this.filter("slowest"),
+            output = "Fastest is " + fastest.map("name");
+
+        output += " it is " + (fastest[0].hz / slowest[0].hz).toFixed(2) + "x faster";
+
+        updates.innerHTML = output;
+        console.log(output);
     });
 
 

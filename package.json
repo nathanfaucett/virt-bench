@@ -32,6 +32,7 @@
   "dependencies": {
     "@nathanfaucett/array-map": "0.0.1",
     "@nathanfaucett/event_emitter": "^0.0.1",
+    "@nathanfaucett/event_listener": "0.0.1",
     "@nathanfaucett/virt": "^0.0.1",
     "@nathanfaucett/virt-dom": "^0.0.1"
   }
