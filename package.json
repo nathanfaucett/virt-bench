@@ -15,25 +15,26 @@
   ],
   "scripts": {
     "compile": "comn -f ./src/index.js -o ./index.js",
+    "build-dev": "npm run compile && grunt envify",
     "build": "npm run compile && grunt envify && grunt uglify"
   },
   "author": "Nathan Faucett",
   "license": "MIT",
   "readmeFilename": "README.md",
   "devDependencies": {
-    "@nathanfaucett/comn": "0.0.1",
+    "@nathanfaucett/comn": "^0.0.11",
     "grunt": "^0.4.5",
     "grunt-contrib-jshint": "^0.11.3",
     "grunt-contrib-uglify": "^0.11.1",
     "grunt-env": "^0.4.4",
-    "grunt-envify": "0.0.3",
+    "grunt-envify": "^0.0.3",
     "grunt-jsbeautifier": "^0.2.10"
   },
   "dependencies": {
     "@nathanfaucett/array-map": "0.0.1",
     "@nathanfaucett/event_emitter": "^0.0.1",
     "@nathanfaucett/event_listener": "0.0.1",
-    "@nathanfaucett/virt": "^0.0.1",
-    "@nathanfaucett/virt-dom": "^0.0.1"
+    "@nathanfaucett/virt": "^0.0.5",
+    "@nathanfaucett/virt-dom": "^0.0.6"
   }
 }
