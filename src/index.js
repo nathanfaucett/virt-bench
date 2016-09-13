@@ -6,7 +6,7 @@ var runTest = document.getElementById("run_test"),
     running = false;
 
 
-//require("./react-test");
+require("./react-test");
 require("./virt-test");
 
 
