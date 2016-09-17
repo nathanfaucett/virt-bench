@@ -19,7 +19,7 @@ function Comp(props, children, context) {
     this.state = props;
 
     this.__onUpdate = function(data) {
-        _this.setState(data);
+        _this.replaceState(data);
     };
 }
 Component.extend(Comp, "Comp");
@@ -57,26 +57,30 @@ Comp.prototype.render = function() {
     }
 };
 
+
+var first = true,
+    random = createSeededRandom();
+
 suite.add("virt", {
     defer: true,
-    fn: (function() {
-        var first = true,
-            random = createSeededRandom();
+    fn: function fn(deferred) {
+        var app = document.getElementById("app");
 
-        return function(deferred) {
-            var app = document.getElementById("app");
-            if (first) {
-                first = false;
-                app.innerHTML = "";
-                virtDOM.render(virt.createView(Comp, createData(3, {
-                    isTop: true
-                }, null, random)), app);
-            } else {
-                ee.emit("update", createData(3, {
-                    isTop: true
-                }, null, random));
-            }
-            deferred.resolve();
-        };
-    }())
+        if (first) {
+            first = false;
+            app.innerHTML = "";
+            virtDOM.render(virt.createView(Comp, createData(3, {
+                isTop: true
+            }, null, random)), app);
+        } else {
+            ee.emitArg("update", createData(3, {
+                isTop: true
+            }, null, random));
+        }
+        deferred.resolve();
+    },
+    onComplete: function onComplete() {
+        first = true;
+        random = createSeededRandom();
+    }
 });

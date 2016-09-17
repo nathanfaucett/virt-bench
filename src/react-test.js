@@ -10,7 +10,7 @@ var ee = new EventEmitter();
 
 var Comp = React.createClass({
     onUpdate: function(data) {
-        this.setState(data);
+        this.replaceState(data);
     },
     getInitialState: function() {
         return this.props;
@@ -48,26 +48,30 @@ var Comp = React.createClass({
     }
 });
 
+
+var first = true,
+    random = createSeededRandom();
+
 suite.add("React", {
     defer: true,
-    fn: (function() {
-        var first = true,
-            random = createSeededRandom();
+    fn: function fn(deferred) {
+        var app = document.getElementById("app");
 
-        return function(deferred) {
-            var app = document.getElementById("app");
-            if (first) {
-                first = false;
-                app.innerHTML = "";
-                ReactDOM.render(React.createElement(Comp, createData(3, {
-                    isTop: true
-                }, null, random)), app);
-            } else {
-                ee.emit("update", createData(3, {
-                    isTop: true
-                }, null, random));
-            }
-            deferred.resolve();
-        };
-    }())
+        if (first) {
+            first = false;
+            app.innerHTML = "";
+            ReactDOM.render(React.createElement(Comp, createData(3, {
+                isTop: true
+            }, null, random)), app);
+        } else {
+            ee.emitArg("update", createData(3, {
+                isTop: true
+            }, null, random));
+        }
+        deferred.resolve();
+    },
+    onComplete: function onComplete() {
+        first = true;
+        random = createSeededRandom();
+    }
 });
