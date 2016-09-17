@@ -34,7 +34,7 @@
     "@nathanfaucett/array-map": "0.0.1",
     "@nathanfaucett/event_emitter": "^0.0.2",
     "@nathanfaucett/event_listener": "0.0.1",
-    "@nathanfaucett/virt": "^0.0.7",
-    "@nathanfaucett/virt-dom": "^0.0.9"
+    "@nathanfaucett/virt": "^0.0.8",
+    "@nathanfaucett/virt-dom": "^0.0.10"
   }
 }
