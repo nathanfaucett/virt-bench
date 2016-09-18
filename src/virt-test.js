@@ -2,8 +2,8 @@ var virt = require("@nathanfaucett/virt"),
     virtDOM = require("@nathanfaucett/virt-dom"),
     arrayMap = require("@nathanfaucett/array-map"),
     EventEmitter = require("@nathanfaucett/event_emitter"),
+    PseudoRandom = require("@nathanfaucett/pseudo_random"),
     createData = require("./createData"),
-    createSeededRandom = require("./createSeededRandom"),
     suite = require("./suite");
 
 
@@ -22,7 +22,7 @@ function Comp(props, children, context) {
         _this.replaceState(data);
     };
 }
-Component.extend(Comp, "Comp");
+Component.extend(Comp, "virt.bench.Comp");
 
 Comp.prototype.componentDidMount = function() {
     if (this.state.isTop) {
@@ -44,14 +44,16 @@ Comp.prototype.render = function() {
         return (
             virt.createView("div", {
                 className: "Comp",
-                key: state.name
+                key: state.name,
+                value: random()
             }, children)
         );
     } else {
         return (
             virt.createView("div", {
                 className: "Comp",
-                key: state.name
+                key: state.name,
+                value: random()
             }, state.name)
         );
     }
@@ -59,7 +61,11 @@ Comp.prototype.render = function() {
 
 
 var first = true,
-    random = createSeededRandom();
+    prng = new PseudoRandom();
+
+function random() {
+    return prng.nextFloat();
+}
 
 suite.add("virt", {
     defer: true,
@@ -81,6 +87,6 @@ suite.add("virt", {
     },
     onComplete: function onComplete() {
         first = true;
-        random = createSeededRandom();
+        prng = new PseudoRandom();
     }
 });

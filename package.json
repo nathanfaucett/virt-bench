@@ -22,19 +22,20 @@
   "license": "MIT",
   "readmeFilename": "README.md",
   "devDependencies": {
-    "@nathanfaucett/comn": "^0.0.11",
+    "@nathanfaucett/comn": "0.0.11",
     "grunt": "^0.4.5",
     "grunt-contrib-jshint": "^0.11.3",
     "grunt-contrib-uglify": "^0.11.1",
     "grunt-env": "^0.4.4",
-    "grunt-envify": "^0.0.3",
-    "grunt-jsbeautifier": "^0.2.10"
+    "grunt-envify": "0.0.3",
+    "grunt-jsbeautifier": "^0.2.13"
   },
   "dependencies": {
     "@nathanfaucett/array-map": "0.0.1",
     "@nathanfaucett/event_emitter": "^0.0.2",
     "@nathanfaucett/event_listener": "0.0.1",
-    "@nathanfaucett/virt": "^0.0.8",
-    "@nathanfaucett/virt-dom": "^0.0.10"
+    "@nathanfaucett/pseudo_random": "0.0.1",
+    "@nathanfaucett/virt": "^0.0.9",
+    "@nathanfaucett/virt-dom": "^0.0.11"
   }
 }

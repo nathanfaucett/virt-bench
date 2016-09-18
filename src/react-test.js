@@ -1,7 +1,7 @@
 var arrayMap = require("@nathanfaucett/array-map"),
     EventEmitter = require("@nathanfaucett/event_emitter"),
+    PseudoRandom = require("@nathanfaucett/pseudo_random"),
     createData = require("./createData"),
-    createSeededRandom = require("./createSeededRandom"),
     suite = require("./suite");
 
 
@@ -34,14 +34,16 @@ var Comp = React.createClass({
             return (
                 React.createElement("div", {
                     className: "Comp",
-                    key: state.name
+                    key: state.name,
+                    value: random()
                 }, children)
             );
         } else {
             return (
                 React.createElement("div", {
                     className: "Comp",
-                    key: state.name
+                    key: state.name,
+                    value: random()
                 }, state.name)
             );
         }
@@ -50,7 +52,11 @@ var Comp = React.createClass({
 
 
 var first = true,
-    random = createSeededRandom();
+    prng = new PseudoRandom();
+
+function random() {
+    return prng.nextFloat();
+}
 
 suite.add("React", {
     defer: true,
@@ -72,6 +78,6 @@ suite.add("React", {
     },
     onComplete: function onComplete() {
         first = true;
-        random = createSeededRandom();
+        prng = new PseudoRandom();
     }
 });
