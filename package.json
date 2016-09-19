@@ -35,7 +35,7 @@
     "@nathanfaucett/event_emitter": "^0.0.2",
     "@nathanfaucett/event_listener": "0.0.1",
     "@nathanfaucett/pseudo_random": "0.0.1",
-    "@nathanfaucett/virt": "^0.0.9",
-    "@nathanfaucett/virt-dom": "^0.0.11"
+    "@nathanfaucett/virt": "^0.0.10",
+    "@nathanfaucett/virt-dom": "^0.0.12"
   }
 }
