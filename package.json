@@ -36,6 +36,6 @@
     "@nathanfaucett/event_listener": "^0.0.2",
     "@nathanfaucett/pseudo_random": "0.0.1",
     "@nathanfaucett/virt": "^0.0.13",
-    "@nathanfaucett/virt-dom": "^0.0.15"
+    "@nathanfaucett/virt-dom": "^0.0.16"
   }
 }
